@@ -1,0 +1,22 @@
+spring:
+  mvc:
+    favicon:
+        enabled: false
+  application:
+    name: product-service
+  data:
+    mongodb:
+      uri: mongodb://${MONGODB_HOSTS:localhost}/${MONGODB_DB:products}
+      collection-base-name: ${MONGODB_COLLECTION_BASE_NAME:products}
+
+api:
+  resourcePath: ${RESOURCE_PATH:/products}
+  toggle-feature:
+    aspect: ${TOGGLE_FEATURE_ASPECT_ENABLED:false}
+
+server:
+  port: ${APPLICATION_PORT:8090}
+  compression:
+    enabled: ${APPLICATION_COMPRESSION_ENABLED:true}
+    mime-types: ${APPLICATION_MINE_TYPES:application/json}
+    min-response-size: ${APPLICATION_MIN_RESPONSE_SIZE:1024}
